@@ -69,12 +69,18 @@ function placePiece(index) {
 }
 
 function checkForWinner() {
+
+    for (let i = 0; i < winningCombos.length; i++) {
+        if(board[winningCombos[i][0]] !== '' && board[winningCombos[i][0]] === board[winningCombos[i][1]] && board[winningCombos[i][0]] === board[winningCombos[i][2]]) {
+            winner = true;
+        }
+    }
   
-     winningCombos.forEach((combo) => {
+     /* winningCombos.forEach((combo) => {
         if (board[combo[0]] !== '' && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) {
             winner = true;
         } 
-    })
+    }) */
 }
 
 function checkForTie() {
